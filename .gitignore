@@ -32,3 +32,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# workspace folders and local clutter
+TripV5/
+V1/
+V2/
+V3/
+V4/
+V5/
+desktop.ini
+folderico-brown.ico

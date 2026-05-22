@@ -46,8 +46,8 @@ export default function RoomForm() {
       setUser(session?.user ?? null);
     });
 
-    if (searchParams.get("signin") === "true") setAuthModalOpen(true);
-    if (searchParams.get("error") === "not_found")
+    if (searchParams?.get("signin") === "true") setAuthModalOpen(true);
+    if (searchParams?.get("error") === "not_found")
       setError("Room not found. Check the code and try again.");
 
     return () => subscription.unsubscribe();
