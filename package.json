@@ -6,6 +6,7 @@
     "dev": "node scripts/next-safe.js dev",
     "build": "node scripts/next-safe.js build",
     "start": "node scripts/next-safe.js start",
+    "export": "node scripts/next-safe.js build && node scripts/next-safe.js export",
     "lint": "next lint"
   },
   "dependencies": {
