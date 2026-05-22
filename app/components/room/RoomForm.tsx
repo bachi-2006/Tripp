@@ -87,7 +87,7 @@ export default function RoomForm() {
         role: "owner",
       });
 
-      router.push(`/room/${code}`);
+      router.push(`/room?code=${code}`);
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "Failed to create room");
     } finally {
@@ -119,7 +119,7 @@ export default function RoomForm() {
         setLoading(false);
         return;
       }
-      router.push(`/room/${room.code}`);
+      router.push(`/room?code=${room.code}`);
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "Failed to join room");
     } finally {
