@@ -8,7 +8,6 @@ export async function POST(req: NextRequest) {
   try {
     const { destination } = await req.json();
 
-    // 1. Try Real Data First (if Geoapify key is set)
     if (process.env.GEOAPIFY_API_KEY) {
       const realPlaces = await getPlaces(destination, "catering.restaurant");
       if (realPlaces && realPlaces.length > 0) {
@@ -16,7 +15,6 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    // 2. Fallback to AI
     if (!apiKey) {
       return NextResponse.json(
         { error: "AI not configured. Set GEMINI_API_KEY in .env.local" },
